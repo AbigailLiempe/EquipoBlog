@@ -1,3 +1,9 @@
 from django.contrib import admin
+from django.urls import clear_script_prefix
 
-# Register your models here.
+from .models import LeadTeam
+from .models import Colaborador
+
+admin.site.register(LeadTeam)
+admin.site.register(Colaborador)
+

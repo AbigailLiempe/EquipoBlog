@@ -8,15 +8,18 @@ class LeadTeam(models.Model):
       email = models.EmailField()
       paginaWeb = models.CharField( max_length=350)
       descripcion = models.TextField()
-      Equipo  = models.IntegerField()
+      team  = models.IntegerField()
       
       
       
-class Usuario(models.Model):
+class Colaborador(models.Model):
       nombre = models.CharField( max_length=50)
       apellido = models.CharField( max_length=50)
       email = models.EmailField()
       paginaWeb = models.CharField( max_length=350)
       descripcion = models.TextField()
-      Equipo  = models.IntegerField()
+      team  = models.IntegerField()
       
+class Team(models.Model):  
+    nombre = models.CharField( max_length=50)
+    team = models.IntegerField()
