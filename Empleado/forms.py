@@ -1,6 +1,6 @@
 from django import forms
 
-class FormLiderEquipo(forms.Form):
+class FormLiderDeEquipo(forms.Form):
       nombre = forms.CharField( max_length=50)
       apellido = forms.CharField( max_length=50)
       email = forms.EmailField()
