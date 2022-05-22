@@ -2,7 +2,7 @@ import email
 from mailbox import NoSuchMailboxError
 from django.db import models
 
-class LeadTeam(models.Model):
+class LiderDeEquipo(models.Model):
       nombre = models.CharField( max_length=50)
       apellido = models.CharField( max_length=50)
       email = models.EmailField()
@@ -20,6 +20,6 @@ class Colaborador(models.Model):
       descripcion = models.TextField()
       team  = models.IntegerField()
       
-class Team(models.Model):  
+class Equipo(models.Model):  
     nombre = models.CharField( max_length=50)
     team = models.IntegerField()

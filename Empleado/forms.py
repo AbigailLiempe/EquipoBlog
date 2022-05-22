@@ -1,6 +1,6 @@
 from django import forms
 
-class FormTeamLeader(forms.Form):
+class FormLiderEquipo(forms.Form):
       nombre = forms.CharField( max_length=50)
       apellido = forms.CharField( max_length=50)
       email = forms.EmailField()
@@ -17,7 +17,7 @@ class FormColaborador(forms.Form):
       descripcion = forms.CharField(widget=forms.Textarea)
       team  = forms.IntegerField()      
       
-class FormTeam(forms.Form):
+class FormEquipo(forms.Form):
       
     nombre = forms.CharField( max_length=50)
     team = forms.IntegerField()      
