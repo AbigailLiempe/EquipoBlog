@@ -7,7 +7,7 @@ def inicio(request):
     return HttpResponse("Bienvenidos Colaboradores!!!!")
 
 
-def buscar_team(request, team):
+def buscar_equipo(request, team):
     if request.GET.get("titulo"):
         titulo = request.GET.get("titulo")
         hilos = Hilo.objects.filter(titulo__icontains=titulo, team=team)
