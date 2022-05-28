@@ -8,4 +8,6 @@ urlpatterns = [
   path ('Nuevo_LiderEquipo', views.LiderNuevo, name='Nuevo Lider'),
   path ('Nuevo_Colaborador', views.Colaborador, name='Nuevo Colaborador'),
   path ('Nuevo_Equipo', views.Equipo, name='Nuevo Team')
+  path("", views.inicio, name="InicioPags"),
+  path("buscar/<Equipo>", views.buscar_equipo, name="Buscar Post"),
 ]

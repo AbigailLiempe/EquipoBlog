@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from Empleado.models import LiderDeEquipo, Colaborador, Equipo
 
 
-from .forms import FormEquipo, FormLiderDeEquipo, FormLiderDeEquipo, FormColaborador, FormEquipo
+from .forms import FormEquipo, FormLiderDeEquipo, FormLiderDeEquipo, FormColaborador, FormEquipo, Post
 
 def inicio(request):
       return render(request,'Empleado/Inicio.html')
@@ -59,4 +59,14 @@ def Equipo(request):
         
       return render (request,'Empleado/formEquipo.html',{'form': mi_form})
             
-      
+def Inicio(request):
+          return HttpResponse("Bienvenidos Colaboradores!!!!")
+
+
+def buscar_equipo(request, team):
+    if request.GET.get("titulo"):
+        titulo = request.GET.get("titulo")
+        hilos = Hilo.objects.filter(titulo__icontains=titulo, team=team)
+        return render(request, "paginas/resultado_buscar.html", {"hilos": hilos})
+
+    return render(request, "paginas/buscar.html")      
