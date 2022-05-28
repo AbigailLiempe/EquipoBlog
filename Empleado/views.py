@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
-from Empleado.models import LiderDeEquipo, Colaborador, Equipo
+from Empleado.models import LiderDeEquipo, Colaborador, Equipo,  Post
+from .forms import FormEquipo, FormLiderDeEquipo, FormLiderDeEquipo, FormColaborador, FormEquipo
 
-
-from .forms import FormEquipo, FormLiderDeEquipo, FormLiderDeEquipo, FormColaborador, FormEquipo, Post
-
-def inicio(request):
+def Inicio(request):
       return render(request,'Empleado/Inicio.html')
+
 def LiderNuevo(request):
       if request.method == "POST":
             mi_form = FormLiderDeEquipo(request.POST)
