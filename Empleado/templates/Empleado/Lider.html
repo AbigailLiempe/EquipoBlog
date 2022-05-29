@@ -1,0 +1,39 @@
+{% extends "Empleado/layout.html" %}
+
+{% load static %}
+
+
+{% block contenidoModificable %}
+
+<p style="color: red;">Estos son los colaboradores a cargo.</p>
+
+
+{% endblock %}
+
+
+{% block contenido2 %}
+        
+
+{% if miFormulario.errors %}
+
+<p style="color: red">Los siguientes datos son incorrectos</p>
+
+{% endif %} 
+
+
+<form action="" method="POST"> {% csrf_token %}
+
+
+    <table>
+
+        {{myForm.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar">
+
+
+</form>
+
+
+{% endblock %}
