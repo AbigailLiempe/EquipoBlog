@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 from Empleados.forms import EquipoFormulario, LiderFormulario, RegistroFormulario, AvatarFormulario
-from Empleados.models import Equipo, Lider, Avatar, Colaborador
+from Empleados.models import Equipo, Lider, Colaborador, Post, Avatar
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 
 
 
@@ -24,14 +24,14 @@ def register(request):
             user=form.cleaned_data['username']
             form.save()
             
-            return render(request, "Empleado/inicio.html", {'mensaje':"Usuario Creado"})
+            return render(request, "Empleados/inicio.html", {'mensaje':"Usuario Creado"})
     
     else:
 
         form = RegistroFormulario()   
     
     
-    return render(request, "Empleado/registro.html", {'form':form})
+    return render(request, "Empleados/registro.html", {'form':form})
 
 
 
@@ -63,7 +63,7 @@ def login_request(request):
             
         form = AuthenticationForm() 
 
-    return render(request, "Empleado/login.html", {'form':form})  
+    return render(request, "Empleados/login.html", {'form':form})  
 
 
 
@@ -71,7 +71,7 @@ def login_request(request):
 def inicio(request):
 
 
-    return render(request,"Empleado/inicio.html")
+    return render(request,"Empleados/inicio.html")
 
 @login_required
 def agregarImagen(request):
@@ -88,13 +88,13 @@ def agregarImagen(request):
 
             avatar.save()
 
-            return render(request, "Empleado/inicio.html")
+            return render(request, "Empleados/inicio.html")
 
     else:
 
         miFormulario = AvatarFormulario()
     
-    return render(request, "Empleado/agregarImg.html", {'form':miFormulario})
+    return render(request, "Empleados/agregarImg.html", {'form':miFormulario})
 
 @login_required
 def agregarEquipo(request):
@@ -114,7 +114,7 @@ def agregarEquipo(request):
 
             equipo.save()
 
-            return render(request, "Empleado/inicio.html")    
+            return render(request, "Empleados/inicio.html")    
 
     else:
 
@@ -122,7 +122,7 @@ def agregarEquipo(request):
 
     dict1={"miFormulario":miFormulario}
 
-    return render(request, "Empleado/equipo.html", dict1)
+    return render(request, "Empleados/equipo.html", dict1)
 
 @login_required
 def agregarColaborador(request):
@@ -152,7 +152,7 @@ def agregarLider(request):
 
             lider.save()
 
-            return render(request, "Empleado/inicio.html")
+            return render(request, "Empleados/inicio.html")
 
     else:
 
@@ -160,14 +160,14 @@ def agregarLider(request):
 
     dict1={'myForm':miFormulario}
 
-    return render(request,"Empleado/lider.html", dict1)
+    return render(request,"Empleados/lider.html", dict1)
 
 
 
 @login_required
 def busquedaEquipo(request):
 
-    return render(request, "Empleado/busquedaEquipo.html")
+    return render(request, "Empleados/busquedaEquipo.html")
 
 
 
@@ -180,7 +180,7 @@ def buscar(request):
         equipo = request.GET['equipo']      
         equipos = Equipo.objects.filter(equipo__iexact=equipo)
 
-        return render(request, "Empleado/resultadosBusqueda.html", {"equipos":equipos, "equipo":equipo})
+        return render(request, "Empleados/resultadosBusqueda.html", {"equipos":equipos, "equipo":equipo})
 
     else:
 
@@ -200,7 +200,7 @@ def borrarLideres(request, lider_nombre):
 
     contexto={"lideres":lideres}
 
-    return render(request, "Empleado/leerLideres.html",contexto)
+    return render(request, "Empleados/leerLideres.html",contexto)
 
 @login_required
 def editarLideres(request, lider_nombre):
@@ -222,7 +222,7 @@ def editarLideres(request, lider_nombre):
 
             lider.save()
 
-            return render(request, "Empleado/inicio.html")
+            return render(request, "Empleados/inicio.html")
 
     else:
 
