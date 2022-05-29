@@ -12,7 +12,7 @@ class LiderFormulario(forms.Form):
       team  = forms.IntegerField()
       
       
-class FormColaborador(forms.Form):
+class ColaboradorFormulario(forms.Form):
       nombre = forms.CharField( max_length=50)
       apellido = forms.CharField( max_length=50)
       email = forms.EmailField()

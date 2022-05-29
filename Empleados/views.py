@@ -54,10 +54,10 @@ def login_request(request):
                 login(request, user)  
 
                 
-                return render(request, "Empleado/inicio.html", {'mensaje':f"Bienvenido {user}"}) 
+                return render(request, "Empleados/inicio.html", {'mensaje':f"Bienvenido {user}"}) 
 
         else:   
-            return render(request, "Empleado/inicio.html", {'mensaje':"Error. Datos incorrectos"})
+            return render(request, "Empleados/inicio.html", {'mensaje':"Error. Datos incorrectos"})
 
     else:
             
