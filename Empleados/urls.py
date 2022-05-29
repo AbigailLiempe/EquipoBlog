@@ -18,9 +18,9 @@ urlpatterns = [
     
     path('equipo/lista', views.EquipoList.as_view(), name='ListEquipos'),
     path(r'^(?P<pk>\d+)$', views.EquipoDetalle.as_view(), name='Detail'),
-    path(r'^nuevo$', views.EquipoCreacion.as_view(), name='New'),
-    path(r'^editar/(?P<pk>\d+)$', views.EquipoUpdate.as_view(), name='Edit'),
-    path(r'^borrar/(?P<pk>\d+)$', views.EquipoDelete.as_view(), name='Delete'),
+    path(r'nuevo_Equipo', views.EquipoCreacion.as_view(), name='New'),
+    path(r'editar_Equipo/<pk>', views.EquipoUpdate.as_view(), name='Edit'),
+    path(r'borrar_Equipo/<pk>', views.EquipoDelete.as_view(), name='Delete'),
 
     path('login', views.login_request, name = 'Login'),
     path('logout', LogoutView.as_view(template_name='Empleado/logout.html'), name='Logout'),
