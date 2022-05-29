@@ -1,6 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.http import HttpResponse
 from django.shortcuts import render
 from Empleados.forms import EquipoFormulario, LiderFormulario, RegistroFormulario, AvatarFormulario
@@ -15,7 +13,6 @@ from django.contrib.auth import login, authenticate
 
 
 
-#Vista para registrarse
 def register(request):
 
     if request.method == 'POST':    
