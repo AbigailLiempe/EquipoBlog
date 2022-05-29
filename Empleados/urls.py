@@ -1,5 +1,5 @@
 from django.urls import path
-from Empleados import views
+from Empleados.template import views
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -22,7 +22,7 @@ urlpatterns = [
     path(r'editar_Equipo/<pk>', views.EquipoUpdate.as_view(), name='Edit'),
     path(r'borrar_Equipo/<pk>', views.EquipoDelete.as_view(), name='Delete'),
 
-    path('login', views.login_request, name = 'Login'),
+    path('Login', views.login_request, name = 'Login'),
     path('logout', LogoutView.as_view(template_name='Empleado/logout.html'), name='Logout'),
     path('register', views.register, name = 'Register'),
     path("editarUsuario", views.editarUsuario, name="EditarUsuario"),
