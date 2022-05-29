@@ -1,10 +1,10 @@
-{% extends "Empleados/layout.html" %}
+{% extends "Empleados/Padre.html" %}
 {% load static %}
 
 
 {% block contenidoModificable %}
 <body>
-    <form action="" method="POST">   {% csrf_token %}
+    <form action="" method="POST">   {%csrf_token%}
         
         {{form.as_p}}
 

@@ -9,7 +9,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, authenticate
 
 
 
@@ -110,7 +110,7 @@ def agregarEquipo(request):
 
             informacion = miFormulario.cleaned_data
 
-            equipo = Equipo(nombre=informacion['equipo'], equipo=informacion['equipo'], duracion=informacion['duracion'])  
+            equipo = Equipo(nombre=informacion['nombre'], equipo=informacion['equipo'], conformacion=informacion['conformacion'])  
 
             equipo.save()
 
@@ -200,7 +200,7 @@ def borrarLideres(request, lider_nombre):
 
     contexto={"lideres":lideres}
 
-    return render(request, "Empleados/leerLideres.html",contexto)
+    return render(request, "Empleados/liederes_list.html",contexto)
 
 @login_required
 def editarLideres(request, lider_nombre):
@@ -218,7 +218,7 @@ def editarLideres(request, lider_nombre):
             lider.nombre = informacion['nombre']
             lider.apellido = informacion['apellido']
             lider.email = informacion['email']
-            lider.lidersion = informacion['area']
+            lider.area = informacion['area']
 
             lider.save()
 
@@ -227,9 +227,9 @@ def editarLideres(request, lider_nombre):
     else:
 
         miFormulario= LiderFormulario(initial={'nombre':lider.nombre, 'apellido':lider.apellido,
-        'email':lider.email, 'lidersion':lider.lidersion})
+        'email':lider.email, 'area':lider.area})
 
-    return render(request, "Empleado/editarLider.html",{'miFormulario':miFormulario, 'lider_nombre':lider_nombre})
+    return render(request, "Empleado/lider_Editar.html",{'miFormulario':miFormulario, 'lider_nombre':lider_nombre})
 
 @login_required
 def editarUsuario(request):

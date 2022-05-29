@@ -1,0 +1,12 @@
+{% extends "Empleados/Padre.html" %}
+
+{% load static %}
+
+
+
+{% block contenido %}
+    {% for Post in hilos %}
+        {{ hilo }} <br/>
+    {% endfor %}
+{% endblock contenido %}
+    

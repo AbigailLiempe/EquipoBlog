@@ -1,10 +1,7 @@
 from django.urls import path
-from os import name
 from Empleados import views
 from django.contrib.auth.views import LogoutView
-from django.urls import clear_script_prefix
-from . import views
-from django.urls import path
+
 urlpatterns = [
 
     path("addEquipos/", views.agregarEquipo, name='addEquipos'),

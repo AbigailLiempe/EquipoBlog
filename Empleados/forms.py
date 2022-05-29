@@ -9,7 +9,7 @@ class LiderFormulario(forms.Form):
       email = forms.EmailField()
       paginaWeb = forms.CharField( max_length=350)
       descripcion = forms.CharField(widget=forms.Textarea)
-      team  = forms.IntegerField()
+      equipo  = forms.IntegerField()
       
       
 class ColaboradorFormulario(forms.Form):
@@ -18,12 +18,13 @@ class ColaboradorFormulario(forms.Form):
       email = forms.EmailField()
       paginaWeb = forms.CharField( max_length=350)
       descripcion = forms.CharField(widget=forms.Textarea)
-      team  = forms.IntegerField()      
+      equipo  = forms.IntegerField()      
       
 class EquipoFormulario(forms.Form):
       
     nombre = forms.CharField( max_length=50)
-    team = forms.IntegerField()      
+    equipo = forms.IntegerField()  
+    duracion= forms.IntegerField()  
 
 class AvatarFormulario(forms.ModelForm):
       

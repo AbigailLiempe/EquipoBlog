@@ -31,7 +31,7 @@ class Colaborador(models.Model):
 class Equipo(models.Model):  
     nombre = models.CharField( max_length=50)
     equipo = models.IntegerField()
-    duracion = models.IntegerField(default=0)
+    conformacion = models.IntegerField(default=0)
 
 
 class Post(models.Model):
