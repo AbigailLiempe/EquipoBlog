@@ -1,5 +1,5 @@
 from django.urls import path
-from Empleados.template import views
+from Empleados import views
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [

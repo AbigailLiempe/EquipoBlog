@@ -123,12 +123,12 @@ def agregarEquipo(request):
 
     dict1={"miFormulario":miFormulario}
 
-    return render(request, "Empleados/equipo.html", dict1)
+    return render(request, "Empleados/Equipo.html", dict1)
 
 @login_required
 def agregarColaborador(request):
 
-    return render(request, "Empleado/estudiante.html")
+    return render(request, "Empleado/colaborador.html")
 
 @login_required
 def agregarPosteo(request):
@@ -185,7 +185,7 @@ def buscar(request):
 
     else:
 
-        respuesta="No enviaste datos."
+        respuesta="No detectamos el envio de la data"
     
     return HttpResponse(respuesta)
 
