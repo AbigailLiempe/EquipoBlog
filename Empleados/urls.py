@@ -22,7 +22,7 @@ urlpatterns = [
     path(r'editar_Equipo/<pk>', views.EquipoUpdate.as_view(), name='Edit'),
     path(r'borrar_Equipo/<pk>', views.EquipoDelete.as_view(), name='Delete'),
 
-    path('login', views.login_request, name = 'login'),
+    path('login', views.login_request, name = 'Login'),
     path('logout', LogoutView.as_view(template_name='Empleado/logout.html'), name='Logout'),
     path('register', views.register, name = 'Register'),
     path("editarUsuario", views.editarUsuario, name="EditarUsuario"),
