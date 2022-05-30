@@ -1,7 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
 from django.http import HttpResponse
-from ..forms import EquipoFormulario, LiderFormulario, RegistroFormulario, AvatarFormulario
+from Empleados.forms import EquipoFormulario, LiderFormulario, RegistroFormulario, AvatarFormulario
 from Empleados.models import Equipo, Lider, Colaborador, Post, Avatar
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
@@ -64,7 +64,7 @@ def login_request(request):
         form = AuthenticationForm() 
 
     
-    return render(request, "login.html", {'form':form}) 
+    return render(request, "/Empleados/login.html", {'form':form}) 
 
 
 
